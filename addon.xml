@@ -1,9 +1,9 @@
-<addon id="plugin.video.kingpin" name="[COLOR gold]kingpin[/COLOR]" provider-name="kingpin" version="0.0.3">
+<addon id="plugin.video.kingpin" name="[COLOR gold]kingpin[/COLOR]" provider-name="kingpin" version="0.0.4">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
-		<import addon="context.kingpin" version="0.0.3" />
-		<import addon="script.module.kingpinaccounts" version="0.0.1" />
-		<import addon="script.module.kingpinscrapers" version="0.0.1"/>
+		<import addon="context.kingpin" version="0.0.5" />
+		<import addon="script.module.kingpinaccounts" version="0.0.2" />
+		<import addon="script.module.kingpinscrapers" version="0.0.3"/>
 		<import addon="script.module.requests" />
 		<import addon="script.module.beautifulsoup4" />
 		<import addon="script.module.metahandler" optional="true" />
