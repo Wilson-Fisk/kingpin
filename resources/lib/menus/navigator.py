@@ -225,7 +225,7 @@ class Navigator:
 		if self.traktCredentials: self.addDirectoryItem(35057, 'tools_traktToolsNavigator', 'tools.png', 'DefaultAddonService.png', isFolder=True)
 		self.addDirectoryItem(32510, 'cache_Navigator', 'tools.png', 'DefaultAddonService.png', isFolder=True)
 		self.addDirectoryItem(32609, 'tools_openKingpinAccount', 'icon.png', 'DefaultAddonService.png', isFolder=False)
-		self.addDirectoryItem(32506, 'tools_contextKSSettings', 'icon.png', 'DefaultAddonProgram.png', isFolder=False)
+		self.addDirectoryItem(32506, 'tools_contextkingpinsettings', 'icon.png', 'DefaultAddonProgram.png', isFolder=False)
 		#-- Providers - 4
 		self.addDirectoryItem(32651, 'tools_kingpinscrapersSettings', 'icon.png', 'DefaultAddonService.png', isFolder=False)
 		self.addDirectoryItem(32523, 'tools_loggingNavigator', 'tools.png', 'DefaultAddonService.png')
