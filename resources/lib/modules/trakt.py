@@ -37,7 +37,7 @@ def getTrakt(url, post=None, extended=False, silent=False):
 	try:
 		if not url.startswith(BASE_URL): url = urljoin(BASE_URL, url)
 		if post: post = jsdumps(post)
-		if getTraktCredentialsInfo(): headers['Authorization'] = 'Bearer %s' % control.addon('script.module.kingpinaccounts').getSetting('trakt.token')
+		if getTraktCredentialsInfo(): headers['Authorization'] = 'Bearer %s' % control.addon('script.module.myaccounts').getSetting('trakt.token')
 
 		if post: response = session.post(url, data=post, headers=headers, timeout=20)
 		else: response = session.get(url, headers=headers, timeout=20)
