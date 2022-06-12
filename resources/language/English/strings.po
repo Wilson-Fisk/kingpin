@@ -479,7 +479,7 @@ msgid "No Movie lists imports found"
 msgstr ""
 
 msgctxt "#32114"
-msgid "Kingpin Accounts sync complete"
+msgid "My Accounts sync complete"
 msgstr ""
 
 msgctxt "#32115"
@@ -563,11 +563,11 @@ msgid "Sort by file size"
 msgstr ""
 
 msgctxt "#32135"
-msgid "Open Kingpin Accounts Addon"
+msgid "Open My Accounts Addon"
 msgstr ""
 
 msgctxt "#32136"
-msgid "sync(re) with Kingpin Accounts"
+msgid "sync(re) with My Accounts"
 msgstr ""
 
 msgctxt "#32137"
@@ -623,11 +623,11 @@ msgid "Create .strm files for TMDB Helper"
 msgstr ""
 
 msgctxt "#32150"
-msgid "Acount Info from Kingpin Accounts"
+msgid "Acount Info from My Accounts"
 msgstr ""
 
 msgctxt "#32151"
-msgid "[I]Please visit Kingpin Accounts for setup[/I]"
+msgid "[I]Please visit My Accounts for setup[/I]"
 msgstr ""
 
 msgctxt "#32152"
@@ -1894,11 +1894,11 @@ msgid "[B]kingpin - Upload log file to pastebin[/B]"
 msgstr ""
 
 msgctxt "#32528"
-msgid "[B]Kingpin Accounts - View Log File[/B]"
+msgid "[B]My Accounts - View Log File[/B]"
 msgstr ""
 
 msgctxt "#32529"
-msgid "[B]Kingpin Accounts - Show Changelog[/B]"
+msgid "[B]My Accounts - Show Changelog[/B]"
 msgstr ""
 
 msgctxt "#32530"

@@ -3,13 +3,13 @@
 	kingpin Add-on
 """
 
-import kingpinaccounts
+import myaccounts
 from resources.lib.modules.control import setting as getSetting, setSetting, notification
 
 
-def syncKingpinAccounts(silent=False):
+def syncMyAccounts(silent=False):
 	try:
-		all_acct = kingpinaccounts.getAll()
+		all_acct = myaccounts.getAll()
 		trakt_acct = all_acct.get('trakt')
 		if getSetting('trakt.token') != trakt_acct.get('token'):
 			trakt_username = trakt_acct.get('username')

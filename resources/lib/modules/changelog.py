@@ -8,7 +8,7 @@ from resources.lib.windows.textviewer import TextViewerXML
 
 
 def get(name):
-	nameDict = {'kingpin': 'plugin.video.kingpin', 'KingpinAccounts': 'script.module.kingpinaccounts', 'kingpinScrapers': 'script.module.kingpinscrapers'}
+	nameDict = {'kingpin': 'plugin.video.kingpin', 'MyAccounts': 'script.module.myaccounts', 'kingpinScrapers': 'script.module.kingpinscrapers'}
 	addon_path = addonPath(nameDict[name])
 	addon_version = addonVersion(nameDict[name])
 	changelog_file = joinPath(addon_path, 'changelog.txt')

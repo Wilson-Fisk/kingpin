@@ -93,17 +93,17 @@ def getTraktAsJson(url, post=None, silent=False):
 
 def re_auth(headers):
 	try:
-		ma_token = control.addon('script.module.kingpinaccounts').getSetting('trakt.token')
-		ma_refresh = control.addon('script.module.kingpinaccounts').getSetting('trakt.refresh')
+		ma_token = control.addon('script.module.myaccounts').getSetting('trakt.token')
+		ma_refresh = control.addon('script.module.myaccounts').getSetting('trakt.refresh')
 		if ma_token != getSetting('trakt.token') or ma_refresh != getSetting('trakt.refresh'):
-			log_utils.log('Syncing Kingpin Accounts Trakt Token', level=log_utils.LOGINFO)
-			from resources.lib.modules import kingpin_accounts
-			kingpin_accounts.synckingpinaccounts(silent=True)
+			log_utils.log('Syncing My Accounts Trakt Token', level=log_utils.LOGINFO)
+			from resources.lib.modules import my_accounts
+			my_accounts.syncmyaccounts(silent=True)
 			return True
 
 		log_utils.log('Re-Authenticating Trakt Token', level=log_utils.LOGINFO)
 		oauth = urljoin(BASE_URL, '/oauth/token')
-		opost = {'client_id': V2_API_KEY, 'client_secret': CLIENT_SECRET, 'redirect_uri': REDIRECT_URI, 'grant_type': 'refresh_token', 'refresh_token': control.addon('script.module.kingpinaccounts').getSetting('trakt.refresh')}
+		opost = {'client_id': V2_API_KEY, 'client_secret': CLIENT_SECRET, 'redirect_uri': REDIRECT_URI, 'grant_type': 'refresh_token', 'refresh_token': control.addon('script.module.myaccounts').getSetting('trakt.refresh')}
 		response = session.post(url=oauth, data=jsdumps(opost), headers=headers, timeout=20)
 		status_code = str(response.status_code)
 
@@ -125,9 +125,9 @@ def re_auth(headers):
 			setSetting('trakt.token', token)
 			setSetting('trakt.refresh', refresh)
 			setSetting('trakt.expires', expires)
-			control.addon('script.module.kingpinaccounts').setSetting('trakt.token', token)
-			control.addon('script.module.kingpinaccounts').setSetting('trakt.refresh', refresh)
-			control.addon('script.module.kingpinaccounts').setSetting('trakt.expires', expires)
+			control.addon('script.module.myaccounts').setSetting('trakt.token', token)
+			control.addon('script.module.myaccounts').setSetting('trakt.refresh', refresh)
+			control.addon('script.module.myaccounts').setSetting('trakt.expires', expires)
 			log_utils.log('Trakt Token Successfully Re-Authorized: expires on %s' % str(datetime.fromtimestamp(float(expires))), level=log_utils.LOGDEBUG)
 			return True
 		else:
@@ -221,7 +221,7 @@ def unwatch(content_type, name, imdb=None, tvdb=None, season=None, episode=None,
 
 def like_list(list_owner, list_name, list_id):
 	try:
-		headers['Authorization'] = 'Bearer %s' % control.addon('script.module.kingpinaccounts').getSetting('trakt.token')
+		headers['Authorization'] = 'Bearer %s' % control.addon('script.module.myaccounts').getSetting('trakt.token')
 		# resp_code = client._basic_request('https://api.trakt.tv/users/%s/lists/%s/like' % (list_owner, list_id), headers=headers, method='POST', ret_code=True)
 		resp_code = session.post('https://api.trakt.tv/users/%s/lists/%s/like' % (list_owner, list_id), headers=headers).status_code
 		if resp_code == 204:
@@ -233,7 +233,7 @@ def like_list(list_owner, list_name, list_id):
 
 def unlike_list(list_owner, list_name, list_id):
 	try:
-		headers['Authorization'] = 'Bearer %s' % control.addon('script.module.kingpinaccounts').getSetting('trakt.token')
+		headers['Authorization'] = 'Bearer %s' % control.addon('script.module.myaccounts').getSetting('trakt.token')
 		# resp_code = client._basic_request('https://api.trakt.tv/users/%s/lists/%s/like' % (list_owner, list_id), headers=headers, method='DELETE', ret_code=True)
 		resp_code = session.delete('https://api.trakt.tv/users/%s/lists/%s/like' % (list_owner, list_id), headers=headers).status_code
 		if resp_code == 204:
@@ -247,7 +247,7 @@ def remove_liked_lists(trakt_ids):
 	if not trakt_ids: return
 	success = None
 	try:
-		headers['Authorization'] = 'Bearer %s' % control.addon('script.module.kingpinaccounts').getSetting('trakt.token')
+		headers['Authorization'] = 'Bearer %s' % control.addon('script.module.myaccounts').getSetting('trakt.token')
 		for id in trakt_ids:
 			list_owner = id.get('list_owner')
 			list_id = id.get('trakt_id')
@@ -1147,7 +1147,7 @@ def scrobbleReset(imdb, tmdb=None, tvdb=None, season=None, episode=None, refresh
 		content_type = 'movie' if not episode else 'episode'
 		resume_info = traktsync.fetch_bookmarks(imdb, tmdb, tvdb, season, episode, ret_type='resume_info')
 		if resume_info == '0': return control.hide() # returns string "0" if no data in db 
-		headers['Authorization'] = 'Bearer %s' % control.addon('script.module.kingpinaccounts').getSetting('trakt.token')
+		headers['Authorization'] = 'Bearer %s' % control.addon('script.module.myaccounts').getSetting('trakt.token')
 		success = session.delete('https://api.trakt.tv/sync/playback/%s' % resume_info[1], headers=headers).status_code == 204
 		if content_type == 'movie':
 			items = [{'type': 'movie', 'movie': {'ids': {'imdb': imdb}}}]
@@ -1182,7 +1182,7 @@ def scrobbleResetItems(imdb_ids, tvdb_dicts=None, refresh=True, widgetRefresh=Fa
 					resume_info_index = [resume_info.index(i) for i in resume_info if i['imdb'] == imdb][0]
 					resume_dict = resume_info[resume_info_index]
 					resume_id = resume_dict['resume_id']
-					headers['Authorization'] = 'Bearer %s' % control.addon('script.module.kingpinaccounts').getSetting('trakt.token')
+					headers['Authorization'] = 'Bearer %s' % control.addon('script.module.myaccounts').getSetting('trakt.token')
 					success = session.delete('https://api.trakt.tv/sync/playback/%s' % resume_id, headers=headers).status_code == 204
 					items = [{'type': 'movie', 'movie': {'ids': {'imdb': imdb}}}]
 					timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z")
@@ -1202,7 +1202,7 @@ def scrobbleResetItems(imdb_ids, tvdb_dicts=None, refresh=True, widgetRefresh=Fa
 					resume_info_index = [resume_info.index(i) for i in resume_info if i['tvdb'] == tvdb][0]
 					resume_dict = resume_info[resume_info_index]
 					resume_id = resume_dict['resume_id']
-					headers['Authorization'] = 'Bearer %s' % control.addon('script.module.kingpinaccounts').getSetting('trakt.token')
+					headers['Authorization'] = 'Bearer %s' % control.addon('script.module.myaccounts').getSetting('trakt.token')
 					success = session.delete('https://api.trakt.tv/sync/playback/%s' % resume_id, headers=headers).status_code == 204
 					items = [{'type': 'episode', 'episode': {'season': season, 'number': episode}, 'show': {'ids': {'imdb': imdb, 'tvdb': tvdb}}}]
 					timestamp = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z")

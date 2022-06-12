@@ -3,7 +3,7 @@
 	Kingpin Add-on
 """
 
-from resources.lib.modules import control, log_utils, kingpin_accounts
+from resources.lib.modules import control, log_utils, my_accounts
 from sys import version_info, platform as sys_platform
 from threading import Thread
 window = control.homeWindow
@@ -47,11 +47,11 @@ class SettingsMonitor(control.monitor_class):
 		control.refresh_libPath()
 		control.refresh_debugReversed()
 
-class SyncKingpinAccounts:
+class SyncMyAccounts:
 	def run(self):
-		control.log('[ plugin.video.kingpin ]  Sync "Kingpin Accounts" Service Starting...', LOGINFO)
-		kingpin_accounts.syncKingpinAccounts(silent=True)
-		return control.log('[ plugin.video.kingpin ]  Finished Sync "Kingpin Accounts" Service', LOGINFO)
+		control.log('[ plugin.video.kingpin ]  Sync "My Accounts" Service Starting...', LOGINFO)
+		my_accounts.syncMyAccounts(silent=True)
+		return control.log('[ plugin.video.kingpin ]  Finished Sync "My Accounts" Service', LOGINFO)
 
 class ReuseLanguageInvokerCheck:
 	def run(self):
@@ -173,7 +173,7 @@ try:
 	addonVersion = control.addon('plugin.video.kingpin').getAddonInfo('version')
 	repoVersion = control.addon('repository.kingpin').getAddonInfo('version')
 	fsVersion = control.addon('script.module.kingpinscrapers').getAddonInfo('version')
-	maVersion = control.addon('script.module.kingpinaccounts').getAddonInfo('version')
+	maVersion = control.addon('script.module.myaccounts').getAddonInfo('version')
 	log_utils.log('########   CURRENT kingpin VERSIONS REPORT   ########', level=LOGINFO)
 	log_utils.log('##   Platform: %s' % str(sys_platform), level=LOGINFO)
 	log_utils.log('##   Kodi Version: %s' % str(kodiVersion), level=LOGINFO)
@@ -181,7 +181,7 @@ try:
 	log_utils.log('##   plugin.video.kingpin Version: %s' % str(addonVersion), level=LOGINFO)
 	log_utils.log('##   repository.kingpin Version: %s' % str(repoVersion), level=LOGINFO)
 	log_utils.log('##   script.module.kingpinscrapers Version: %s' % str(fsVersion), level=LOGINFO)
-	log_utils.log('##   script.module.kingpinaccounts Version: %s' % str(maVersion), level=LOGINFO)
+	log_utils.log('##   script.module.myaccounts Version: %s' % str(maVersion), level=LOGINFO)
 	log_utils.log('######   kingpin SERVICE ENTERING KEEP ALIVE   #####', level=LOGINFO)
 except:
 	log_utils.log('## ERROR GETTING kingpin VERSION - Missing Repo or failed Install ', level=LOGINFO)
@@ -199,7 +199,7 @@ def main():
 		schedTrakt = None
 		libraryService = None
 		CheckSettingsFile().run()
-		SyncKingpinAccounts().run()
+		SyncMyAccounts().run()
 		ReuseLanguageInvokerCheck().run()
 		if control.setting('library.service.update') == 'true':
 			libraryService = Thread(target=LibraryService().run)

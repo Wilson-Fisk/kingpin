@@ -234,11 +234,11 @@
 	<!-- Trakt - 6 -->
 	<category label="32315">
 		<setting type="lsep" label="32315" />
-		<setting type="action" label="32135" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=0.3&amp;opensettings=true&amp;query2=6.1)" />
-		<setting type="action" label="32136" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_syncKingpinAccount&amp;opensettings=true&amp;query=6.2)" />
-		<setting type="action" label="32137" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_ShowHelp&amp;name=kingpinaccountsSync)" />
+		<setting type="action" label="32135" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=0.3&amp;opensettings=true&amp;query2=6.1)" />
+		<setting type="action" label="32136" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_syncMyAccount&amp;opensettings=true&amp;query=6.2)" />
+		<setting type="action" label="32137" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_ShowHelp&amp;name=myaccountsSync)" />
 		<setting id="trakt.username" type="text" label="40062" default="" enable="false" visible="true" />
-		<setting type="action" label="32153" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_traktAcctkingpinaccounts)" visible="!eq(-1,)" />
+		<setting type="action" label="32153" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_traktAcctmyaccounts)" visible="!eq(-1,)" />
 		<setting id="trakt.token" type="text" label="" visible="false" default="" />
 		<setting id="trakt.refresh" type="text" label="" visible="false" default="" />
 		<setting id="trakt.service.syncInterval" type="slider" label="Trakt service sync interval (in minutes)" default="15" range="5,60" option="int" visible="!eq(-4,)" />
@@ -268,12 +268,12 @@
 
 	<!-- Accounts - 7 -->
 	<category label="32346">
-		<setting type="action" label="32135" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=1.0&amp;opensettings=true&amp;query2=7.0)" />
-		<setting type="action" label="32136" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_syncKingpinAccount&amp;opensettings=true&amp;query=7.1)" />
-		<setting type="action" label="32137" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_ShowHelp&amp;name=kingpinaccountsSync)" />
+		<setting type="action" label="32135" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=1.0&amp;opensettings=true&amp;query2=7.0)" />
+		<setting type="action" label="32136" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_syncMyAccount&amp;opensettings=true&amp;query=7.1)" />
+		<setting type="action" label="32137" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_ShowHelp&amp;name=myaccountsSync)" />
 
 		<setting type="lsep" label="40059" />
-		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=1.5&amp;opensettings=true&amp;query2=7.4)" visible="eq(2,)" />
+		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=1.5&amp;opensettings=true&amp;query2=7.4)" visible="eq(2,)" />
 		<setting id="alldebrid.enable" type="bool" label="32081" default="true" visible="!eq(1,)" />
 		<setting id="alldebrid.token" type="text" label="32152" default="" visible="false" />
 		<setting id="alldebrid.username" type="text" label="40006" default="" enable="false" visible="!eq(-1,) + eq(-2,true)" />
@@ -283,10 +283,10 @@
 		<setting id="ad_cloud.ignore.m2ts" type="bool" label="32052" subsetting="true" default="true" visible="!eq(-5,) + eq(-6,true) + eq(-1,true)" />
 		<setting type="action" label="32137" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_ShowHelp&amp;name=ignoreM2ts)" visible="!eq(-6,) + eq(-7,true) + eq(-2,true)" />
 		<setting id="alldebrid.server.notifications" type="bool" label="33051" default="true" visible="!eq(-7,) + eq(-8,true)" />
-		<setting type="action" label="32153" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_adAcctkingpinaccounts)" visible="!eq(-8,) + eq(-9,true)" />
+		<setting type="action" label="32153" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_adAcctmyaccounts)" visible="!eq(-8,) + eq(-9,true)" />
 
 		<setting type="lsep" label="40057" />
-		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=1.13&amp;opensettings=true&amp;query2=7.16)" visible="eq(2,)" />
+		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=1.13&amp;opensettings=true&amp;query2=7.16)" visible="eq(2,)" />
 		<setting id="premiumize.enable" type="bool" label="32081" default="true" visible="!eq(1,)" />
 		<setting id="premiumize.token" type="text" label="32154" default="" visible="false" />
 		<setting id="premiumize.username" type="text" label="40006" default="" enable="false" visible="!eq(-1,) + eq(-2,true)" />
@@ -296,10 +296,10 @@
 		<setting id="pm_cloud.ignore.m2ts" type="bool" label="32052" subsetting="true" default="true" visible="!eq(-5,) + eq(-6,true) + eq(-1,true)" />
 		<setting type="action" label="32137" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_ShowHelp&amp;name=ignoreM2ts)" visible="!eq(-6,) + eq(-7,true) + eq(-2,true)" />
 		<setting id="premiumize.server.notifications" type="bool" label="33051" default="true" visible="!eq(-7,) + eq(-8,true)" />
-		<setting type="action" label="32153" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_pmAcctkingpinaccounts)" visible="!eq(-8,) + eq(-9,true)" />
+		<setting type="action" label="32153" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_pmAcctmyaccounts)" visible="!eq(-8,) + eq(-9,true)" />
 
 		<setting type="lsep" label="40058" />
-		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=1.21&amp;opensettings=true&amp;query2=7.28)" visible="eq(2,)" />
+		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=1.21&amp;opensettings=true&amp;query2=7.28)" visible="eq(2,)" />
 		<setting id="realdebrid.enable" type="bool" label="32081" default="true" visible="!eq(1,)" />
 		<setting id="realdebrid.token" type="text" label="realdebrid token" default="" visible="false" />
 		<setting id="realdebrid.username" type="text" label="40006" default="" enable="false" visible="!eq(-1,) + eq(-2,true)" />
@@ -312,32 +312,32 @@
 		<setting id="rd_cloud.ignore.m2ts" type="bool" label="32052" subsetting="true" default="true" visible="!eq(-8,) + eq(-9,true) + eq(-1,true)" />
 		<setting type="action" label="32137" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_ShowHelp&amp;name=ignoreM2ts)" visible="!eq(-9,) + eq(-10,true) + eq(-2,true)" />
 		<setting id="realdebrid.server.notifications" type="bool" label="33051" default="true" visible="!eq(-10,) + eq(-11,true)" />
-		<setting type="action" label="32153" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_rdAcctkingpinaccounts)" visible="!eq(-11,) + eq(-12,true)" />
+		<setting type="action" label="32153" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_rdAcctmyaccounts)" visible="!eq(-11,) + eq(-12,true)" />
 		<setting type="lsep" label="Easy News" />
-		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=3.2&amp;opensettings=true&amp;query2=7.43)" visible="eq(1,)" />
+		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=3.2&amp;opensettings=true&amp;query2=7.43)" visible="eq(1,)" />
 		<setting id="easynews.username" type="text" label="40006" default="" enable="false" />
 		<setting id="easynews.password" type="text" label="32307" option="hidden" default="" enable="false" visible="!eq(-1,)" />
 		<setting id="easynews.priority" type="slider" label="40005" option="int" range="1,1,10" default="10" enable="true" visible="!eq(-2,)" />
 
 		<setting type="lsep" label="Filepursuit" />
-		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=3.2&amp;opensettings=true&amp;query2=7.48)" visible="eq(1,)" />
+		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=3.2&amp;opensettings=true&amp;query2=7.48)" visible="eq(1,)" />
 		<setting id="filepursuit.api" type="text" label="32309" default="" enable="false" />
 		<setting id="filepursuit.priority" type="slider" label="40005" option="int" range="1,1,10" default="10" enable="true" visible="!eq(-1,)" />
 
 		<setting type="lsep" label="Furk.net" />
-		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=3.7&amp;opensettings=true&amp;query2=7.52)" visible="eq(1,)" />
+		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=3.7&amp;opensettings=true&amp;query2=7.52)" visible="eq(1,)" />
 		<setting id="furk.username" type="text" label="32126" default="" enable="false" />
 		<setting id="furk.password" type="text" label="32127" option="hidden" default="" enable="false" visible="!eq(-1,)" />
 		<setting id="furk.api" type="text" label="32128" default="" enable="false" visible="!eq(-2,)" />
 		<setting id="furk.priority" type="slider" label="40005" option="int" range="1,1,10" default="10" enable="true" visible="!eq(-3,)" />
 
 		<setting type="lsep" label="GDrive" />
-		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=3.11&amp;opensettings=true&amp;query2=7.58)" visible="eq(1,)" />
+		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=3.11&amp;opensettings=true&amp;query2=7.58)" visible="eq(1,)" />
 		<setting id="gdrive.url" type="text" label="GDrive Worker URL" default="" enable="false" />
 		<setting id="gdrive.priority" type="slider" label="40005" option="int" range="1,1,10" default="10" enable="true" visible="!eq(-1,)" />
 
 		<setting type="lsep" label="Ororo" />
-		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=3.11&amp;opensettings=true&amp;query2=7.62)" visible="eq(1,)" />
+		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=3.11&amp;opensettings=true&amp;query2=7.62)" visible="eq(1,)" />
 		<setting id="ororo.username" type="text" label="40006" default="" enable="false" />
 		<setting id="ororo.password" type="text" label="32307" default="" enable="false" visible="!eq(-1,)" />
 		<setting id="ororo.priority" type="slider" label="40005" option="int" range="1,1,10" default="10" enable="true" visible="!eq(-2,)" />
@@ -345,16 +345,16 @@
 
 	<!-- Accounts(Meta) - 8 -->
 	<category label="32390">
-		<setting type="action" label="32135" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=2.0&amp;opensettings=true&amp;query2=8.0)" />
-		<setting type="action" label="32136" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_syncKingpinAccount&amp;opensettings=true&amp;query=8.1)" />
-		<setting type="action" label="32137" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_ShowHelp&amp;name=kingpinaccountsSync)" />
+		<setting type="action" label="32135" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=2.0&amp;opensettings=true&amp;query2=8.0)" />
+		<setting type="action" label="32136" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_syncMyAccount&amp;opensettings=true&amp;query=8.1)" />
+		<setting type="action" label="32137" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_ShowHelp&amp;name=myaccountsSync)" />
 
 		<setting type="lsep" label="FANART.TV" />
-		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=2.1&amp;opensettings=true&amp;query2=8.4)" visible="eq(1,)" />
+		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=2.1&amp;opensettings=true&amp;query2=8.4)" visible="eq(1,)" />
 		<setting id="fanart_tv.api_key" type="text" label="Fanart API" default="" enable="false" />
 
 		<setting type="lsep" label="TMDb" />
-		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=2.4&amp;opensettings=true&amp;query2=8.7)" visible="eq(1,)" />
+		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=2.4&amp;opensettings=true&amp;query2=8.7)" visible="eq(1,)" />
 		<setting id="tmdb.api.key" type="text" label="TMDb API" option="hidden" default="" enable="false" />
 		<setting id="tmdb.username" type="text" label="TMDb username" default="" enable="false" />
 		<setting id="tmdb.password" type="text" label="TMDb password" default="" enable="false" />
@@ -362,7 +362,7 @@
 		<setting id="tmdb.session_id" type="text" default="" label="session_id" enable="false" />
 
 		<setting type="lsep" label="IMDb" />
-		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openKingpinAccount&amp;query=2.18&amp;opensettings=true&amp;query2=8.14)" visible="eq(1,)" />
+		<setting type="action" label="32151" option="close" action="RunPlugin(plugin://plugin.video.kingpin/?action=tools_openMyAccount&amp;query=2.18&amp;opensettings=true&amp;query2=8.14)" visible="eq(1,)" />
 		<setting id="imdb.user" type="text" label="32303" default="" enable="false" />
 	</category>
 

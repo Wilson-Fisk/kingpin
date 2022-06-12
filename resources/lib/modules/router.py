@@ -525,31 +525,31 @@ def router(params):
 		elif action == 'tools_cleanSettings':
 			from resources.lib.modules import clean_settings
 			clean_settings.clean_settings()
-		elif action == 'tools_openKingpinAccount':
-			from kingpinaccounts import openKASettings
-			from resources.lib.modules import kingpin_accounts
-			openKASettings(query)
+		elif action == 'tools_openMyAccount':
+			from myaccounts import openMASettings
+			from resources.lib.modules import my_accounts
+			openMASettings(query)
 			control.sleep(500)
-			while control.condVisibility('Window.IsVisible(addonsettings)') or control.homeWindow.getProperty('kingpinaccounts.active') == 'true':
+			while control.condVisibility('Window.IsVisible(addonsettings)') or control.homeWindow.getProperty('myaccounts.active') == 'true':
 				control.sleep(500)
 			control.sleep(100)
-			kingpin_accounts.syncKingpinAccounts()
+			my_accounts.syncMyAccounts()
 			control.sleep(100)
 			if params.get('opensettings') == 'true':
 				control.openSettings(params.get('query2'), 'plugin.video.kingpin')
-		elif action == 'tools_syncKingpinAccount':
-			from resources.lib.modules import kingpin_accounts
-			kingpin_accounts.syncKingpinAccounts()
+		elif action == 'tools_syncMyAccount':
+			from resources.lib.modules import my_accounts
+			my_accounts.syncMyAccounts()
 			if params.get('opensettings') == 'true':
 				control.openSettings(query, 'plugin.video.kingpin')
-		elif action == 'tools_traktAcctKingpinAccounts':
-			control.execute('RunScript(script.module.kingpinaccounts, action=traktAcct)')
-		elif action == 'tools_adAcctKingpinAccounts':
-			control.execute('RunScript(script.module.kingpinaccounts, action=alldebridAcct)')
-		elif action == 'tools_pmAcctKingpinAccounts':
-			control.execute('RunScript(script.module.kingpinaccounts, action=premiumizeAcct)')
-		elif action == 'tools_rdAcctKingpinAccounts':
-			control.execute('RunScript(script.module.kingpinaccounts, action=realdebridAcct)')
+		elif action == 'tools_traktAcctMyAccounts':
+			control.execute('RunScript(script.module.myaccounts, action=traktAcct)')
+		elif action == 'tools_adAcctMyAccounts':
+			control.execute('RunScript(script.module.myaccounts, action=alldebridAcct)')
+		elif action == 'tools_pmAcctMyaccounts':
+			control.execute('RunScript(script.module.myaccounts, action=premiumizeAcct)')
+		elif action == 'tools_rdAcctMyAccounts':
+			control.execute('RunScript(script.module.myaccounts, action=realdebridAcct)')
 		elif action == 'tools_openSettings':
 			control.openSettings(query)
 		elif action == 'tools_contextkingpinSettings':

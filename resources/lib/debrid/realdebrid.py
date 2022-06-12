@@ -785,7 +785,7 @@ class RealDebrid:
 			control.setSetting('realdebrid.client_id', self.client_ID)
 			control.setSetting('realdebrid.secret', self.secret,)
 			control.setSetting('realdebrid.token', self.token)
-			control.addon('script.module.kingpinaccounts').setSetting('realdebrid.token', self.token)
+			control.addon('script.module.myaccounts').setSetting('realdebrid.token', self.token)
 			control.setSetting('realdebrid.refresh', response['refresh_token'])
 			return True, None
 		except:
