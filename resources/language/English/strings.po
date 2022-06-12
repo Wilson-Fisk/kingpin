@@ -2202,7 +2202,7 @@ msgid "Unaired Season/Episode Color"
 msgstr ""
 
 msgctxt "#32609"
-msgid "[B]Kingpin Accounts[/B] Settings"
+msgid "[B]My Accounts[/B] Settings"
 msgstr ""
 
 msgctxt "#32610"
