@@ -1,4 +1,4 @@
-<addon id="plugin.video.kingpin" name="[COLOR gold]kingpin[/COLOR]" provider-name="kingpin" version="0.0.12">
+<addon id="plugin.video.kingpin" name="[COLOR magenta]kingpin[/COLOR]" provider-name="kingpin" version="0.0.13">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0" />
 		<import addon="context.kingpin" version="0.0.6" />
@@ -16,13 +16,13 @@
 	<extension point="xbmc.python.module" library="resources/lib/" />
 	<extension point="xbmc.addon.metadata">
 		<reuselanguageinvoker>true</reuselanguageinvoker>
-		<summary lang="en">[B][COLOR red]kingpin[/COLOR][/B] - We do not host any of the contents streamed</summary>
-		<description lang="en">[B][COLOR red]kingpin[/COLOR][/B][CR] This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.[CR]The author does not host any of the content in this addon and takes no responsibility for content found</description>
+		<summary lang="en">[B][COLOR magenta]kingpin[/COLOR][/B] - We do not host any of the contents streamed</summary>
+		<description lang="en">[B][COLOR magenta]kingpin[/COLOR][/B][CR] This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.[CR]The author does not host any of the content in this addon and takes no responsibility for content found</description>
 		<platform>all</platform>
 		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
 		<forum />
-		<website>https://github.com/123kingpin/plugin.video.kingpin</website>
-		<source>https://github.com/123kingpin/plugin.video.kingpin</source>
+		<website>https://github.com/Wilson-Fisk/kingpin</website>
+		<source>https://github.com/Wilson-Fisk/kingpin</source>
 		<disclaimer lang="en">The author of this addon does not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
 		<assets>
 			<icon>icon.png</icon>
@@ -32,11 +32,8 @@
 			<screenshot>resources/screenshots/screenshot003.jpg</screenshot>
 		</assets>
 		<news>
-[B][COLOR red]Update - v6.5.6 - April 09, 2022[/COLOR][/B]
-[COLOR yellow]--[/COLOR][I] Due to report of timeout error I've bumped the timeout value from 10 to 20 for fanarttv, tmdb, tvmaze, and trakt indexers.[/I]
-[COLOR yellow]--[/COLOR][I] Trakt scrobble reset has been moved to "[B]onAVStarted()[/B]" callback method due to a bug in the Kodi player "[B]onPlayBackEnded()[/B]" method being issued after the next playlist item already began playback.[/I]
-[COLOR yellow]--[/COLOR][I] Added the Source Select index number to the Resolve dialog. Now if a resolve failure occurs you'll know which item number the failure occurred on.[/I]
-[COLOR yellow]--[/COLOR][I] Added a new setting to the "[B]Trakt"[/B] category called [B]"Browse Progress - load all remaining episodes of series"[/B].  Please see the help file below the new setting for a detailed explanation on it's functionality.[/I]
+[B][COLOR magenta]Update - v0.0.13 - June 09, 2022[/COLOR][/B]
+[COLOR magenta]--[/COLOR][I] Kingpin is here.[/I]
 		</news>
 	</extension>
 </addon>
