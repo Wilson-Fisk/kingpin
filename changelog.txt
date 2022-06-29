@@ -1,0 +1,2 @@
+[B][COLOR magenta]June 28, 2022[/COLOR][/B]
+[COLOR magenta]--[/COLOR][I] Update adds ability to use custom trakt api id and secret in my accounts.[/I]

@@ -7,6 +7,7 @@ from datetime import datetime
 from json import dumps as jsdumps
 import re
 import requests
+from myaccounts.modules.trakt import Trakt
 from requests.adapters import HTTPAdapter
 from threading import Thread
 from time import time
@@ -21,8 +22,12 @@ getLS = control.lang
 getSetting = control.setting
 setSetting = control.setSetting
 BASE_URL = 'https://api.trakt.tv'
-V2_API_KEY = 'e3a8d1c673dfecb7f669b23ecbf77c75fcfd24d3e8c3dbc7f79ed995262fa1db'
-CLIENT_SECRET = '73bee6aeee29cb75db4d8771458a440017f7cfe842e85f457ed9d81f7910b349'
+myac_trakt= Trakt()
+V2_API_KEY = myac_trakt.client_id
+CLIENT_SECRET = myac_trakt.client_secret
+#V2_API_KEY = 'removedkey'
+#CLIENT_SECRET = 'removedclientsecret'
+
 headers = {'Content-Type': 'application/json', 'trakt-api-key': V2_API_KEY, 'trakt-api-version': '2'}
 REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
 session = requests.Session()
@@ -98,7 +103,7 @@ def re_auth(headers):
 		if ma_token != getSetting('trakt.token') or ma_refresh != getSetting('trakt.refresh'):
 			log_utils.log('Syncing My Accounts Trakt Token', level=log_utils.LOGINFO)
 			from resources.lib.modules import my_accounts
-			my_accounts.syncmyaccounts(silent=True)
+			my_accounts.syncMyAccounts(silent=True)
 			return True
 
 		log_utils.log('Re-Authenticating Trakt Token', level=log_utils.LOGINFO)

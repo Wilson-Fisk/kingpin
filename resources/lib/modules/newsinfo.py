@@ -8,7 +8,7 @@ from resources.lib.modules.control import addonPath, addonId, joinPath
 from resources.lib.windows.textviewer import TextViewerXML
 
 kingpin_path = addonPath(addonId())
-news_file = 'https://raw.githubusercontent.com/123kingpin/plugin.video.kingpin/matrix/newsinfo.txt'
+news_file = 'https://raw.githubusercontent.com/Wilson-Fisk/kingpin/master/newsinfo.txt'
 local_news = joinPath(kingpin_path, 'newsinfo.txt')
 
 
