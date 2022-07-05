@@ -1,3 +1,6 @@
+[B][COLOR magenta]July 5, 2022[/COLOR][/B]
+[COLOR magenta]--[/COLOR][I] Fixes index out of range (thanks umbrellaplug).[/I]
+
 [B][COLOR magenta]July 4, 2022[/COLOR][/B]
 [COLOR magenta]--[/COLOR][I] Fixes the trakt 401 repeating over and over again (thanks umbrellaplug).[/I]
 
