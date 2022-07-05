@@ -1,4 +1,7 @@
 [B][COLOR magenta]July 4, 2022[/COLOR][/B]
+[COLOR magenta]--[/COLOR][I] Fixes the trakt 401 repeating over and over again (thanks umbrellaplug).[/I]
+
+[B][COLOR magenta]July 4, 2022[/COLOR][/B]
 [COLOR magenta]--[/COLOR][I] Fixes the trakt needing reauthenticating errors.[/I]
 
 [B][COLOR magenta]June 28, 2022[/COLOR][/B]
