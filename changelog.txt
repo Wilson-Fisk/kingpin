@@ -1,3 +1,8 @@
+[B][COLOR magenta]July 22, 2022[/COLOR][/B]
+[COLOR magenta]--[/COLOR][I] Removes Youtube. Fixes Metahandler conflict. Final update to Kingpin. 
+Please switch to Umbrella if you want a continued Venom fork that will be well maintained, 
+it is in good hands.[/I]
+
 [B][COLOR magenta]July 10, 2022[/COLOR][/B]
 [COLOR magenta]--[/COLOR][I] Fixes Play Random not working.[/I]
 

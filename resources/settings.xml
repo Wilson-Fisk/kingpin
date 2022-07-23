@@ -42,7 +42,6 @@
 		<setting type="lsep" label="32005" />
 		<setting id="mylists.widget" type="bool" label="32329" default="true" />
 		<setting id="navi.anime" type="bool" label="40068" default="false" />
-		<setting id="navi.youtube" type="bool" label="40061" default="true" />
 		<setting id="navi.prem.services" type="bool" label="40060" default="true" />
 		<setting id="navi.alldebrid" type="bool" label="32223" subsetting="true" default="true" visible="eq(-1,true)"/>
 		<setting id="navi.easynews" type="bool" label="32224" subsetting="true" default="true" visible="eq(-2,true)" />
